@@ -45,7 +45,7 @@ def update_data():
 @client.event
 async def on_message(message):
 
-    if message.content.startswith('-hq') and message.channel.id == data.command_channel:
+    if message.content.startswith('+Q') and message.channel.id == data.command_channel:
 
         if data.game_in_session == True:
             return
