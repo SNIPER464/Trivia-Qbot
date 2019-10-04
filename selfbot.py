@@ -41,7 +41,7 @@ def update_data():
     file3.close()
     file4.close()
 
-#This is the command that triggers the selfbot to start it's 10 second scan of the surveyed channels
+#This is the command that triggers the selfbot to start it's 8 second scan of the surveyed channels
 @client.event
 async def on_message(message):
 
@@ -54,55 +54,55 @@ async def on_message(message):
 
     if data.game_in_session and message.channel.id in data.input_hq_private:
         if message.content == '1' or message.content == '1apg' or message.content == '1 apg':
-            data.counter_private_1 += 10
+            data.counter_private_1 += 100
         elif message.content == '1?' or message.content == '?1':
-            data.counter_private_1 += 5
+            data.counter_private_1 += 50
         elif message.content == 'cnf1' or message.content == '1cnf' or message.content == '1 cnf':
-            data.counter_private_1 += 15
+            data.counter_private_1 += 150
         elif message.content == '2' or message.content == '2apg' or message.content == '2 apg':
-            data.counter_private_2 += 10
+            data.counter_private_2 += 100
         elif message.content == '2?' or message.content == '?2':
-            data.counter_private_2 += 5
+            data.counter_private_2 += 50
         elif message.content == 'cnf2' or message.content == '2cnf' or message.content == '2 cnf':
-            data.counter_private_2 += 15
+            data.counter_private_2 += 150
         elif message.content == '3' or message.content == '3apg' or message.content == '3 apg':
-            data.counter_private_3 += 10
+            data.counter_private_3 += 100
         elif message.content == '3?' or message.content == '?3':
-            data.counter_private_3 += 5
+            data.counter_private_3 += 50
         elif message.content == 'cnf3' or message.content == '3cnf' or message.content == '3 cnf':
-            data.counter_private_3 += 15
+            data.counter_private_3 += 150
 
     if data.game_in_session and message.channel.id in data.input_hq_public:
         if message.content == '1' or message.content == '1apg' or message.content == '1 apg':
-            data.counter_public_1 += 10
+            data.counter_public_1 += 100
         elif message.content == '1?' or message.content == '?1':
-            data.counter_public_1 += 5
+            data.counter_public_1 += 50
         elif message.content == '1q' or message.content == 'q1':
             data.counter_public_1 += 100
         elif message.content == '1x' or message.content == 'x1':
-            data.wronggone1 = 1
+            data.wronggone1 = 10
         elif message.content == 'cnf1' or message.content == '1cnf' or message.content == '1 cnf':
-            data.counter_public_1 += 15
+            data.counter_public_1 += 150
         elif message.content == '2' or message.content == '2apg' or message.content == '2 apg':
-            data.counter_public_2 += 10
+            data.counter_public_2 += 100
         elif message.content == '2?' or message.content == '?2':
-            data.counter_public_2 += 5
+            data.counter_public_2 += 50
         elif message.content == '2q' or message.content == 'q2':
             data.counter_public_2 += 100
         elif message.content == '2x' or message.content == 'x2':
-            data.wronggone2 = 1
+            data.wronggone2 = 10
         elif message.content == 'cnf2' or message.content == '2cnf' or message.content == '2 cnf':
-            data.counter_public_2 += 15
+            data.counter_public_2 += 150
         elif message.content == '3' or message.content == '3apg' or message.content == '3 apg':
-            data.counter_public_3 += 10
+            data.counter_public_3 += 100
         elif message.content == '3?' or message.content == '?3':
-            data.counter_public_3 += 5
+            data.counter_public_3 += 50
         elif message.content == '3q' or message.content == 'q3':
             data.counter_public_3 += 100
         elif message.content == '3x' or message.content == 'x3':
-            data.wronggone3 = 1
+            data.wronggone3 = 10
         elif message.content == 'cnf3' or message.content == '3cnf' or message.content == '3 cnf':
-            data.counter_public_3 += 15
+            data.counter_public_3 += 150
 
     data.counter1 = data.weight_time * (data.counter_public_1 + data.weight * data.counter_private_1)
     data.counter2 = data.weight_time * (data.counter_public_2 + data.weight * data.counter_private_2)
