@@ -21,24 +21,24 @@ def update_embed():
         highlighter1 = highlighter2 = highlighter3 = ' '
     else:
         if number1 == max(number1, number2, number3):
-            highlighter1 = '```'
+            highlighter1 = '⚠'
             best_answer = ':one:'
         if number2 == max(number1, number2, number3):
-            highlighter2 = '```'
+            highlighter2 = '⚠'
             best_answer = ':two:'
         if number3 == max(number1, number2, number3):
-            highlighter3 = '```'
+            highlighter3 = '⚠'
             best_answer = ':three:'
 
     if data.embed is None:
-        data.embed = discord.Embed(title='**__HQ TRIVIA__**', color=0x89cff0)
+        data.embed = discord.Embed(title='**__CONFETII TRIVIA__**', color=0x89cff0)
         data.embed.add_field(name="Answer 1", value= highlighter1 + str(number1) + highlighter1, inline=False)
         data.embed.add_field(name="Answer 2", value= highlighter2 + str(number2) + highlighter2, inline=False)
         data.embed.add_field(name="Answer 3", value= highlighter3 + str(number3) + highlighter3, inline=False)
         data.embed.set_image(url='http://www.animatedimages.org/data/media/562/animated-line-image-0379.gif')
-        data.embed.set_footer(text= '© Trivia Việt Nam Group👑 2019 ')
+        data.embed.set_footer(text= 'Trivia Qbot ')
 
-        data.embed_best = discord.Embed(title='**__HQ TRIVIA__**', color=0x89cff0)
+        data.embed_best = discord.Embed(title='**__CONFETII TRIVIA__**', color=0x89cff0)
         data.embed_best.add_field(name="Best answer:", value=best_answer, inline=True)
     else:
         data.embed.set_field_at(0, name="Answer 1", value= highlighter1 + str(number1) + highlighter1, inline=False)
